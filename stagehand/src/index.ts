@@ -289,12 +289,16 @@ async function handleToolCall(
           instruction: args.instruction,
           schema: zodSchema,
         });
-        log(`Data extracted successfully: ${JSON.stringify(data)}`);
+        if (!data || typeof data !== "object" || !("data" in data)) {
+          throw new Error("Invalid extraction response format");
+        }
+        const extractedData = data.data;
+        log(`Data extracted successfully: ${JSON.stringify(extractedData)}`);
         return {
           content: [
             {
               type: "text",
-              text: `Extraction result: ${JSON.stringify(data)}`,
+              text: `Extraction result: ${JSON.stringify(extractedData)}`,
             },
             {
               type: "text",
