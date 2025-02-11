@@ -33,4 +33,4 @@ To learn to get started with Browserbase, check out ['browserbase/README.md'](./
 
 ### Alternative Installation Methods
 
-[Smithery](https://smithery.ai/protocol/@browserbasehq)
+[Smithery](https://smithery.ai/server/@browserbasehq/mcp-browserbase)
